@@ -23,21 +23,27 @@ import NovaraMark from "@/components/NovaraMark";
 import SiteHeader from "@/components/SiteHeader";
 
 const capabilities = [
-  ["01", "Strategic Advisory", "Business strategy, positioning, market analysis, and growth planning."],
-  ["02", "Growth Systems", "Customer acquisition, commercial strategy, partnerships, and revenue systems."],
-  ["03", "Digital Transformation", "Technology strategy, automation, AI implementation, and digital infrastructure."],
-  ["04", "AI & Intelligent Systems", "AI workflows, intelligent agents, automation, and decision-support systems."],
-  ["05", "Brand & Creative Strategy", "Brand architecture, positioning, communication systems, and creative direction."],
-  ["06", "Media & Content", "Strategic media, narrative systems, documentary thinking, and digital content."],
-  ["07", "New Ventures", "Concepts, products, platforms, experiments, and emerging opportunities."],
+  ["01", "Strategic Consulting", "Core advisory delivered through the Strategic Growth Operating System."],
+  ["02", "Business Strategy Development", "Strategic planning, positioning, and direction-setting."],
+  ["03", "Strategic Growth Planning", "Structured roadmaps for sustainable expansion."],
+  ["04", "Organizational Transformation", "Large-scale change and capability building."],
+  ["05", "Innovation Advisory", "Guiding new products, services, and business models."],
+  ["06", "Leadership Facilitation", "Executive and leadership-level strategic support."],
+  ["07", "Strategic Workshops", "Facilitated sessions for planning and alignment."],
+  ["08", "Performance Improvement", "Measurement-driven optimization of outcomes."],
+  ["09", "Growth Advisory", "Ongoing strategic counsel for scaling organizations."],
+  ["10", "Executive Strategic Support", "Direct advisory partnership with leadership."],
 ];
 
 const growthStages = [
-  ["01", "Discover", "Understand the business, market, customer, constraints, and opportunities."],
-  ["02", "Define", "Establish the strategic direction and the priorities that will hold."],
-  ["03", "Design", "Build the growth architecture, offers, systems, and initiatives."],
-  ["04", "Deploy", "Turn strategic intent into coordinated execution."],
-  ["05", "Optimize", "Measure, learn, improve, and scale what creates lasting value."],
+  ["01", "Discovery", "Develop a comprehensive understanding of the organization, its environment, stakeholders, capabilities, challenges, and opportunities."],
+  ["02", "Diagnosis", "Analyze Discovery findings to identify root causes, strategic gaps, risks, and growth opportunities."],
+  ["03", "Strategy Blueprint", "Design a practical, prioritized strategic roadmap that aligns organizational objectives with actionable initiatives."],
+  ["04", "Execution", "Translate strategic plans into coordinated action through disciplined implementation, accountability, and communication."],
+  ["05", "Measurement", "Evaluate progress using clearly defined KPIs, dashboards, and measurable business outcomes."],
+  ["06", "Optimization", "Continuously improve performance by reviewing results, capturing lessons learned, and refining strategy and execution."],
+  ["07", "Partnership Success", "Strengthen long-term strategic relationships through continuous collaboration, value creation, and capability development."],
+  ["08", "Strategic Renewal", "Prepare the organization for its next cycle of growth by reassessing priorities, exploring emerging opportunities, and returning to Discovery."],
 ];
 
 const initiatives = [
@@ -74,7 +80,7 @@ export default function Home() {
                 Turning uncertainty into <span className="text-[#73b2ff]">growth.</span>
               </h1>
               <p className="hero-entrance delay-2 mt-8 max-w-[570px] text-lg leading-8 text-slate-300 sm:text-xl">
-                Novara is a strategic growth and innovation company helping ambitious businesses build clarity, capability, and systems for what comes next.
+                Novara — Strategic Growth Innovation Company. We help organizations turn uncertainty into clarity, and clarity into disciplined action.
               </p>
               <div className="hero-entrance delay-3 mt-10 flex flex-wrap gap-4">
                 <button type="button" onClick={() => setContactOpen(true)} className="signal-button">
@@ -148,21 +154,30 @@ export default function Home() {
               </p>
             </div>
             <div className="relative mt-16">
-              <div className="absolute left-[18px] top-5 h-[calc(100%-40px)] w-px bg-[linear-gradient(#2477e8,rgba(70,148,245,.16))] lg:left-[10%] lg:top-[48px] lg:h-px lg:w-[80%]" />
-              <div className="grid gap-7 lg:grid-cols-5 lg:gap-4">
+              <div className="sgos-wheel mx-auto hidden max-w-[880px] lg:block" aria-label="Eight-stage Strategic Growth Operating System cycle">
+                <div className="sgos-wheel-core"><span>SGOS</span><small>CONTINUOUS<br />GROWTH</small></div>
                 {growthStages.map(([number, title, copy], index) => (
-                  <article key={title} className="relative pl-12 lg:pl-0 lg:pt-14">
-                    <span className="absolute left-0 top-0 grid h-9 w-9 place-items-center rounded-full border border-[#4595ff]/50 bg-[#0a1727] text-[11px] font-bold text-[#78b5ff] lg:left-0 lg:top-0">{number}</span>
-                    <span className="absolute left-[13px] top-[48px] hidden h-5 w-px bg-[#2477e8] lg:block" />
-                    <p className="text-xs font-bold tracking-[0.2em] text-[#72b2ff]">STAGE {index + 1}</p>
-                    <h3 className="mt-3 font-display text-3xl font-medium tracking-[-0.05em] text-white">{title}</h3>
-                    <p className="mt-4 max-w-[235px] text-sm leading-6 text-slate-400">{copy}</p>
+                  <article key={title} className={`sgos-stage sgos-stage-${index + 1}`}>
+                    <span className="sgos-stage-number">{number}</span>
+                    <h3>{title}</h3>
+                    <p>{copy}</p>
                   </article>
                 ))}
               </div>
+              <div className="grid gap-4 sm:grid-cols-2 lg:hidden">
+                {growthStages.map(([number, title, copy]) => (
+                  <article key={title} className="group relative min-h-[220px] border border-white/10 bg-white/[.035] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#4d99ff]/55 hover:bg-[#1051a5]/15">
+                    <div className="flex items-center justify-between"><span className="grid h-9 w-9 place-items-center rounded-full border border-[#4595ff]/50 text-[11px] font-bold text-[#78b5ff]">{number}</span><span className="text-[10px] font-bold tracking-[0.18em] text-slate-500">SGOS</span></div>
+                    <h3 className="mt-10 font-display text-2xl font-medium tracking-[-0.05em] text-white">{title}</h3>
+                    <p className="mt-3 text-sm leading-6 text-slate-400">{copy}</p>
+                  </article>
+                ))}
+              </div>
+              <p className="mt-10 text-center font-display text-lg tracking-[-0.02em] text-[#b7d7ff]">Sustainable growth is achieved through disciplined systems, not isolated initiatives.</p>
+              <div className="mt-4 flex items-center justify-center gap-3 text-xs font-bold uppercase tracking-[0.16em] text-[#8bc0ff]"><span className="h-px w-10 bg-[#4a9bff]" />08 Strategic Renewal feeds back into 01 Discovery</div>
             </div>
             <a href="#capabilities" className="ghost-button mt-16 border-white/20 text-white hover:border-[#4795ff] hover:bg-white/5">
-              Explore the SGOS framework <ArrowRight className="h-4 w-4" />
+              Explore the SGOS Framework <ArrowRight className="h-4 w-4" />
             </a>
           </div>
         </section>
@@ -174,7 +189,7 @@ export default function Home() {
               <div><SectionLabel>CAPABILITIES</SectionLabel></div>
               <div>
                 <h2 className="font-display text-[clamp(3rem,5.1vw,5.8rem)] font-semibold leading-[.94] tracking-[-0.065em] text-[#0a1525]">Where strategy meets execution.</h2>
-                <p className="mt-6 max-w-xl text-lg leading-8 text-[#526174]">Capabilities within a broader operating system—not isolated services with isolated outcomes.</p>
+                <p className="mt-6 max-w-xl text-lg leading-8 text-[#526174]">Every service is delivered through the Strategic Growth Operating System, ensuring consistency, quality, and measurable outcomes.</p>
               </div>
             </div>
             <div className="relative divide-y divide-[#0c2340]/12 before:absolute before:bottom-0 before:left-[73px] before:top-0 before:w-px before:bg-[#1d6de0]/15">
@@ -200,27 +215,27 @@ export default function Home() {
                 <h2 className="mt-5 font-display text-[clamp(3rem,5.1vw,5.8rem)] font-semibold leading-[.95] tracking-[-0.065em] text-[#0a1525]">One company. Multiple expressions of progress.</h2>
               </div>
               <p className="border-l border-[#0c2340]/15 pl-6 text-lg leading-8 text-[#405168] lg:mt-16">
-                Novara is designed to evolve beyond a single practice into an interconnected ecosystem of strategic, technological, and entrepreneurial ventures.
+                Novara is designed to evolve beyond a single consulting practice into an interconnected ecosystem of strategic intelligence, education, research, and innovation.
               </p>
             </div>
             <div className="mt-16 grid gap-5 lg:grid-cols-12">
               <article className="relative overflow-hidden bg-[#0a1727] p-8 text-white lg:col-span-5 lg:min-h-[605px] lg:p-10">
                 <div className="absolute inset-0 opacity-50 [background-image:radial-gradient(circle_at_80%_20%,rgba(44,119,232,.50),transparent_25%),linear-gradient(rgba(151,194,250,.09)_1px,transparent_1px),linear-gradient(90deg,rgba(151,194,250,.09)_1px,transparent_1px)] [background-size:auto,42px_42px,42px_42px]" />
                 <div className="relative flex h-full flex-col">
-                  <span className="status-tag border-white/20 text-slate-300">THE PARENT COMPANY</span>
+                  <span className="status-tag border-white/20 text-slate-300">ACTIVE / OPERATING</span>
                   <h3 className="mt-24 font-display text-6xl font-semibold tracking-[-0.07em] text-white">Novara</h3>
-                  <p className="mt-4 max-w-xs text-xl leading-8 text-slate-300">Strategic Growth & Innovation</p>
-                  <p className="mt-auto border-t border-white/15 pt-6 text-sm leading-6 text-slate-400">The core company: strategy, growth, innovation, and technology working as one connected system.</p>
+                  <p className="mt-4 max-w-xs text-xl leading-8 text-slate-300">Strategic Growth Innovation Company</p>
+                  <p className="mt-auto border-t border-white/15 pt-6 text-sm leading-6 text-slate-400">The core company. Strategic consulting delivered through the Strategic Growth Operating System (SGOS).</p>
                 </div>
               </article>
               <div className="grid gap-5 lg:col-span-7 lg:grid-cols-2">
                 {[
-                  ["Novara Labs", "Innovation & Emerging Technology", "Experimenting with AI, technology, products, automation, and new business models.", "/manus-storage/novara-labs-system_3ddbbce0.jpg"],
-                  ["Novara Energies", "Energy Systems & Transition", "Exploring intelligent energy infrastructure and practical pathways for resilient growth.", "/manus-storage/novara-energies-system_5b32d368.jpg"],
-                  ["Novara AI", "Applied Intelligence", "Building intelligent workflows, decision systems, and capability for organisations ready to operate differently.", "/manus-storage/novara-ai-system_fbfa949b.jpg"],
+                  ["Lumora", "Strategic Intelligence Platform", "Novara's future digital strategy platform, designed to operationalize SGOS so organizations can plan, execute, measure, and continuously improve strategic initiatives.", ""],
+                  ["Novara Academy", "Education & Certification", "The future education and professional development division for structured learning, professional training, certifications, and executive education.", ""],
+                  ["Novara Labs", "Research & Innovation", "The future research, innovation, and development division exploring emerging ideas, methodology, AI applications, and future business models.", "/manus-storage/novara-labs-system_3ddbbce0.jpg"],
                 ].map(([title, subtitle, copy, image], index) => (
                   <article key={title} className={`group relative overflow-hidden bg-[#122138] p-7 text-white ${index === 2 ? "lg:col-span-2 lg:min-h-[270px]" : "min-h-[290px]"}`}>
-                    <div className="absolute inset-0 bg-cover bg-center opacity-65 transition-transform duration-700 group-hover:scale-105" style={{ backgroundImage: `url('${image}')` }} />
+                    {image ? <div className="absolute inset-0 bg-cover bg-center opacity-65 transition-transform duration-700 group-hover:scale-105" style={{ backgroundImage: `url('${image}')` }} /> : <div className="absolute inset-0 opacity-65 [background-image:linear-gradient(rgba(151,194,250,.09)_1px,transparent_1px),linear-gradient(90deg,rgba(151,194,250,.09)_1px,transparent_1px),radial-gradient(circle_at_75%_25%,rgba(36,119,232,.55),transparent_25%)] [background-size:42px_42px,42px_42px,auto]" />}
                     <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,17,31,.95)_0%,rgba(8,17,31,.72)_50%,rgba(8,17,31,.26)_100%)]" />
                     <div className="relative z-10 flex h-full flex-col">
                       <span className="status-tag w-fit border-[#6eafff]/45 text-[#9bcbff]">FUTURE INITIATIVE</span>
@@ -298,8 +313,8 @@ export default function Home() {
               {[
                 ["Today", "Strategy & Growth"],
                 ["Next", "Technology & AI"],
-                ["Expansion", "Labs · Energies · Intelligence"],
-                ["Vision", "A connected innovation ecosystem"],
+                ["Expansion", "Labs · Academy · Intelligence"],
+                ["Vision", "A connected Novara ecosystem"],
               ].map(([time, title], index) => (
                 <div key={time} className="relative border-t border-[#0c2340]/20 pt-5">
                   {index < 3 && <ChevronRight className="absolute -right-3 top-[-11px] hidden h-5 w-5 bg-[#dbe5f3] text-[#1d6de0] md:block" />}
@@ -314,11 +329,18 @@ export default function Home() {
         <section id="about" className="relative bg-white px-5 py-24 sm:px-8 lg:px-14 lg:py-32">
           <div className="system-register left-[8%] top-10 hidden sm:flex"><span className="system-node" /> <span>05 / THE NOVARA POSITION</span><i /></div>
           <div className="mx-auto grid max-w-[1300px] gap-12 lg:grid-cols-[.82fr_1.18fr] lg:gap-24">
-            <div><SectionLabel>ABOUT NOVARA</SectionLabel><div className="mt-6 flex items-center gap-3"><span className="h-px w-9 bg-[#1d6de0]" /><span className="text-xs font-semibold tracking-[0.18em] text-[#637488]">STRATEGIC GROWTH & INNOVATION COMPANY</span></div></div>
+            <div><SectionLabel>ABOUT NOVARA</SectionLabel><div className="mt-6 flex items-center gap-3"><span className="h-px w-9 bg-[#1d6de0]" /><span className="text-xs font-semibold tracking-[0.18em] text-[#637488]">STRATEGIC GROWTH INNOVATION COMPANY</span></div></div>
             <div>
               <h2 className="font-display text-[clamp(3rem,5.1vw,5.8rem)] font-semibold leading-[.94] tracking-[-0.065em] text-[#0a1525]">A different kind of growth company.</h2>
               <p className="mt-8 max-w-2xl text-xl leading-8 text-[#40536b]">Novara sits at the intersection of strategy, business growth, technology, and creativity.</p>
-              <p className="mt-5 max-w-2xl text-lg leading-8 text-[#607084]">We believe the strongest businesses of the next decade will not separate strategy from technology or creativity from execution. They will connect them. That is what Novara is being built to do.</p>
+              <p className="mt-5 max-w-2xl text-lg leading-8 text-[#607084]">We believe the strongest businesses of the next decade will not separate strategy from technology or creativity from execution. They will connect them.</p>
+              <blockquote className="mt-8 border-l-2 border-[#2477e8] pl-5 font-display text-2xl leading-[1.2] tracking-[-0.04em] text-[#132943]">A future where no organization grows by accident — where strategy, execution, and innovation operate as one connected system, guided by Novara.</blockquote>
+              <div className="mt-10 border-t border-[#0c2340]/12 pt-6">
+                <p className="eyebrow text-[#2169cf]">CORE VALUES</p>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {["Strategic Thinking", "Innovation", "Excellence", "Partnership", "Continuous Growth"].map((value) => <span key={value} className="border border-[#0c2340]/15 px-3 py-2 text-xs font-bold tracking-[0.04em] text-[#40536b]">{value}</span>)}
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -345,7 +367,7 @@ export default function Home() {
       <footer className="bg-[#07111f] px-5 pb-8 pt-14 text-white sm:px-8 lg:px-14">
         <div className="mx-auto max-w-[1300px]">
           <div className="flex flex-col justify-between gap-12 border-b border-white/10 pb-12 md:flex-row">
-            <div><NovaraMark inverted /><p className="mt-5 max-w-xs text-sm leading-6 text-slate-400">Strategic Growth & Innovation Company</p></div>
+            <div><NovaraMark inverted /><p className="mt-5 max-w-xs text-sm leading-6 text-slate-400">Strategic Growth Innovation Company</p></div>
             <div className="grid grid-cols-2 gap-x-12 gap-y-4 text-sm text-slate-400 sm:grid-cols-4">
               {["Strategy", "Capabilities", "Ecosystem", "About"].map((label) => <a key={label} href={`#${label.toLowerCase()}`} className="transition-colors hover:text-[#79b8ff]">{label}</a>)}
             </div>
