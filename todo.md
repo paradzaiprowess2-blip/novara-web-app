@@ -41,3 +41,10 @@ Only the contact conversation flow is currently data-bearing in the public Novar
 - [x] Preserve the current visual identity, navigation, simplified How We Work section, initiatives, future timeline, contact modal, and footer structure.
 - [x] Validate exactly four ecosystem cards and exactly eight cyclical SGOS stages.
 - [x] Re-run type/build checks, responsive screenshots, and save the corrected checkpoint.
+
+## GitHub export
+
+- [ ] Create the private GitHub repository `novara-web-app`.
+- [ ] Commit and push the current Novara project files.
+- [ ] Verify the remote repository and default branch.
+- [ ] Deliver the private repository link.
