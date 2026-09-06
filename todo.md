@@ -44,7 +44,7 @@ Only the contact conversation flow is currently data-bearing in the public Novar
 
 ## GitHub export
 
-- [ ] Create the private GitHub repository `novara-web-app`.
-- [ ] Commit and push the current Novara project files.
-- [ ] Verify the remote repository and default branch.
-- [ ] Deliver the private repository link.
+- [x] Create the private GitHub repository `novara-web-app`.
+- [x] Commit and push the current Novara project files.
+- [x] Verify the remote repository and default branch.
+- [x] Deliver the private repository link.
