@@ -20,30 +20,31 @@ import {
 } from "lucide-react";
 import ContactDialog from "@/components/ContactDialog";
 import NovaraMark from "@/components/NovaraMark";
+import SgosOverviewDialog from "@/components/SgosOverviewDialog";
 import SiteHeader from "@/components/SiteHeader";
 
 const capabilities = [
-  ["01", "Strategic Consulting", "Core advisory delivered through the Strategic Growth Operating System."],
-  ["02", "Business Strategy Development", "Strategic planning, positioning, and direction-setting."],
-  ["03", "Strategic Growth Planning", "Structured roadmaps for sustainable expansion."],
-  ["04", "Organizational Transformation", "Large-scale change and capability building."],
-  ["05", "Innovation Advisory", "Guiding new products, services, and business models."],
-  ["06", "Leadership Facilitation", "Executive and leadership-level strategic support."],
-  ["07", "Strategic Workshops", "Facilitated sessions for planning and alignment."],
-  ["08", "Performance Improvement", "Measurement-driven optimization of outcomes."],
-  ["09", "Growth Advisory", "Ongoing strategic counsel for scaling organizations."],
-  ["10", "Executive Strategic Support", "Direct advisory partnership with leadership."],
+  ["01", "Strategic Consulting", "Strategic guidance for consequential business decisions."],
+  ["02", "Business Strategy Development", "Clear direction for the opportunities ahead."],
+  ["03", "Strategic Growth Planning", "Prioritized plans for sustainable growth."],
+  ["04", "Organizational Transformation", "Change that strengthens the organization from within."],
+  ["05", "Innovation Advisory", "Guidance for new possibilities and stronger value creation."],
+  ["06", "Leadership Facilitation", "Focused support for leaders navigating complexity."],
+  ["07", "Strategic Workshops", "Working sessions that create clarity and alignment."],
+  ["08", "Performance Improvement", "Better outcomes through purposeful improvement."],
+  ["09", "Growth Advisory", "Ongoing counsel for organizations moving forward."],
+  ["10", "Executive Strategic Support", "A strategic partner for executive decision-making."],
 ];
 
 const growthStages = [
-  ["01", "Discovery", "Develop a comprehensive understanding of the organization, its environment, stakeholders, capabilities, challenges, and opportunities."],
-  ["02", "Diagnosis", "Analyze Discovery findings to identify root causes, strategic gaps, risks, and growth opportunities."],
-  ["03", "Strategy Blueprint", "Design a practical, prioritized strategic roadmap that aligns organizational objectives with actionable initiatives."],
-  ["04", "Execution", "Translate strategic plans into coordinated action through disciplined implementation, accountability, and communication."],
-  ["05", "Measurement", "Evaluate progress using clearly defined KPIs, dashboards, and measurable business outcomes."],
-  ["06", "Optimization", "Continuously improve performance by reviewing results, capturing lessons learned, and refining strategy and execution."],
-  ["07", "Partnership Success", "Strengthen long-term strategic relationships through continuous collaboration, value creation, and capability development."],
-  ["08", "Strategic Renewal", "Prepare the organization for its next cycle of growth by reassessing priorities, exploring emerging opportunities, and returning to Discovery."],
+  ["01", "Discovery", "We build a clear, complete picture of where your organization truly stands."],
+  ["02", "Diagnosis", "We identify the real issues behind the surface-level symptoms."],
+  ["03", "Strategy Blueprint", "We design a prioritized roadmap built for your reality, not a template."],
+  ["04", "Execution", "We turn strategy into coordinated action your teams can actually run."],
+  ["05", "Measurement", "We track what matters, so progress is never a guess."],
+  ["06", "Optimization", "We refine continuously, using evidence instead of assumption."],
+  ["07", "Partnership Success", "We stay invested in outcomes, not just deliverables."],
+  ["08", "Strategic Renewal", "We prepare you for the next cycle of growth before you need it."],
 ];
 
 const initiatives = [
@@ -59,6 +60,7 @@ function SectionLabel({ children, light = false }: { children: React.ReactNode; 
 
 export default function Home() {
   const [contactOpen, setContactOpen] = useState(false);
+  const [sgosOverviewOpen, setSgosOverviewOpen] = useState(false);
 
   return (
     <div id="top" className="min-h-screen overflow-hidden bg-[#f5f7fa] text-[#0a1525]">
@@ -150,7 +152,7 @@ export default function Home() {
               <SectionLabel light>THE NOVARA GROWTH SYSTEM</SectionLabel>
               <h2 className="mt-5 font-display text-[clamp(3rem,5.7vw,6.4rem)] font-semibold leading-[.93] tracking-[-0.07em] text-white">SGOS is strategy designed to operate.</h2>
               <p className="mt-7 max-w-xl text-lg leading-8 text-slate-300">
-                The Strategic Growth Operating System is a structured framework for diagnosing a business, defining direction, designing growth systems, and improving performance continuously.
+                An eight-stage proprietary methodology that brings disciplined progress to every phase of growth.
               </p>
             </div>
             <div className="relative mt-16">
@@ -176,9 +178,9 @@ export default function Home() {
               <p className="mt-10 text-center font-display text-lg tracking-[-0.02em] text-[#b7d7ff]">Sustainable growth is achieved through disciplined systems, not isolated initiatives.</p>
               <div className="mt-4 flex items-center justify-center gap-3 text-xs font-bold uppercase tracking-[0.16em] text-[#8bc0ff]"><span className="h-px w-10 bg-[#4a9bff]" />08 Strategic Renewal feeds back into 01 Discovery</div>
             </div>
-            <a href="#capabilities" className="ghost-button mt-16 border-white/20 text-white hover:border-[#4795ff] hover:bg-white/5">
-              Explore the SGOS Framework <ArrowRight className="h-4 w-4" />
-            </a>
+            <button type="button" onClick={() => setSgosOverviewOpen(true)} className="ghost-button mt-16 border-white/20 text-white hover:border-[#4795ff] hover:bg-white/5">
+              Request the Full SGOS Overview <ArrowRight className="h-4 w-4" />
+            </button>
           </div>
         </section>
 
@@ -189,7 +191,7 @@ export default function Home() {
               <div><SectionLabel>CAPABILITIES</SectionLabel></div>
               <div>
                 <h2 className="font-display text-[clamp(3rem,5.1vw,5.8rem)] font-semibold leading-[.94] tracking-[-0.065em] text-[#0a1525]">Where strategy meets execution.</h2>
-                <p className="mt-6 max-w-xl text-lg leading-8 text-[#526174]">Every service is delivered through the Strategic Growth Operating System, ensuring consistency, quality, and measurable outcomes.</p>
+                <p className="mt-6 max-w-xl text-lg leading-8 text-[#526174]">Every capability is delivered through Novara's proprietary methodology, ensuring consistency, quality, and measurable outcomes across every engagement.</p>
               </div>
             </div>
             <div className="relative divide-y divide-[#0c2340]/12 before:absolute before:bottom-0 before:left-[73px] before:top-0 before:w-px before:bg-[#1d6de0]/15">
@@ -222,23 +224,23 @@ export default function Home() {
               <article className="relative overflow-hidden bg-[#0a1727] p-8 text-white lg:col-span-5 lg:min-h-[605px] lg:p-10">
                 <div className="absolute inset-0 opacity-50 [background-image:radial-gradient(circle_at_80%_20%,rgba(44,119,232,.50),transparent_25%),linear-gradient(rgba(151,194,250,.09)_1px,transparent_1px),linear-gradient(90deg,rgba(151,194,250,.09)_1px,transparent_1px)] [background-size:auto,42px_42px,42px_42px]" />
                 <div className="relative flex h-full flex-col">
-                  <span className="status-tag border-white/20 text-slate-300">ACTIVE / OPERATING</span>
-                  <h3 className="mt-24 font-display text-6xl font-semibold tracking-[-0.07em] text-white">Novara</h3>
+                  <span className="status-tag border-white/20 text-slate-300">ACTIVE</span>
+                  <h3 className="mt-24 font-display text-6xl font-semibold tracking-[-0.07em] text-white">NOVARA</h3>
                   <p className="mt-4 max-w-xs text-xl leading-8 text-slate-300">Strategic Growth Innovation Company</p>
-                  <p className="mt-auto border-t border-white/15 pt-6 text-sm leading-6 text-slate-400">The core company. Strategic consulting delivered through the Strategic Growth Operating System (SGOS).</p>
+                  <p className="mt-auto border-t border-white/15 pt-6 text-sm leading-6 text-slate-400">The core company. Strategic consulting delivered through Novara's proprietary methodology.</p>
                 </div>
               </article>
               <div className="grid gap-5 lg:col-span-7 lg:grid-cols-2">
                 {[
-                  ["Lumora", "Strategic Intelligence Platform", "Novara's future digital strategy platform, designed to operationalize SGOS so organizations can plan, execute, measure, and continuously improve strategic initiatives.", ""],
-                  ["Novara Academy", "Education & Certification", "The future education and professional development division for structured learning, professional training, certifications, and executive education.", ""],
-                  ["Novara Labs", "Research & Innovation", "The future research, innovation, and development division exploring emerging ideas, methodology, AI applications, and future business models.", "/manus-storage/novara-labs-system_3ddbbce0.jpg"],
+                  ["LUMORA", "Strategic Intelligence Platform (Future)", "Novara's future digital platform, designed to operationalize Novara's methodology — turning strategic thinking into an intelligent digital environment for planning, execution, measurement, and continuous improvement.", ""],
+                  ["NOVARA ACADEMY", "Education & Certification (Future)", "The education and professional development division — training, certification, and executive education for leaders and practitioners.", ""],
+                  ["NOVARA LABS", "Research & Innovation (Future)", "The research and innovation division — exploring new methodologies, emerging technologies, and future Novara intellectual property. Novara Labs is also developing intelligent business systems for retailers, starting with a tool that helps store owners protect their business from inventory loss.", "/manus-storage/novara-labs-system_3ddbbce0.jpg"],
                 ].map(([title, subtitle, copy, image], index) => (
                   <article key={title} className={`group relative overflow-hidden bg-[#122138] p-7 text-white ${index === 2 ? "lg:col-span-2 lg:min-h-[270px]" : "min-h-[290px]"}`}>
                     {image ? <div className="absolute inset-0 bg-cover bg-center opacity-65 transition-transform duration-700 group-hover:scale-105" style={{ backgroundImage: `url('${image}')` }} /> : <div className="absolute inset-0 opacity-65 [background-image:linear-gradient(rgba(151,194,250,.09)_1px,transparent_1px),linear-gradient(90deg,rgba(151,194,250,.09)_1px,transparent_1px),radial-gradient(circle_at_75%_25%,rgba(36,119,232,.55),transparent_25%)] [background-size:42px_42px,42px_42px,auto]" />}
                     <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,17,31,.95)_0%,rgba(8,17,31,.72)_50%,rgba(8,17,31,.26)_100%)]" />
                     <div className="relative z-10 flex h-full flex-col">
-                      <span className="status-tag w-fit border-[#6eafff]/45 text-[#9bcbff]">FUTURE INITIATIVE</span>
+                      <span className="status-tag w-fit border-[#6eafff]/45 text-[#9bcbff]">FUTURE INITIATIVE — IN DEVELOPMENT</span>
                       <div className="mt-auto">
                         <p className="text-xs font-bold tracking-[0.18em] text-[#77b5ff]">{subtitle}</p>
                         <h3 className="mt-3 font-display text-4xl font-medium tracking-[-0.06em] text-white">{title}</h3>
@@ -376,6 +378,7 @@ export default function Home() {
         </div>
       </footer>
       <ContactDialog open={contactOpen} onOpenChange={setContactOpen} />
+      <SgosOverviewDialog open={sgosOverviewOpen} onOpenChange={setSgosOverviewOpen} />
     </div>
   );
 }
